@@ -6,7 +6,7 @@
 
 // Now we have 2 Sagas, and we need to start them both at once. To do that, we'll add a rootSaga that is responsible for starting our other Sagas. 
 
-import { put, takeEvery, all } from 'redux-saga/effects'
+import { put,  call, takeEvery } from 'redux-saga/effects'
 
 const delay = (ms) => new Promise(res => setTimeout(res, ms))
 
@@ -15,7 +15,7 @@ function* helloSaga() {
 }
 
 export function* incrementAsync() {
-  yield delay(1000)
+  yield call(delay, 1000)
   yield put({ type: 'INCREMENT' })
 }
 
