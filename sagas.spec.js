@@ -5,6 +5,7 @@ import { incrementAsync, delay } from './sagas'
 
 test('incrementAsync Saga test', (assert) => {
   const gen = incrementAsync()
+//   console.log('gen>>', gen.next())
 
   assert.deepEqual(
     gen.next().value,
